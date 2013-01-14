@@ -1,6 +1,6 @@
 {
   "name": "crocodoc-node",
-  "version": "1.0.0-develop",
+  "version": "1.0.0",
   "description": "Crocodoc API, node.js client library",
   "keywords": [ "crocodoc", "library", "client", "api" ],
   "license": "MIT",
