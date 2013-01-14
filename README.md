@@ -6,7 +6,7 @@ This software is released under the MIT license. See `LICENSE.md` for more detai
 
 ## Release Status
 
-* Latest: **0.1.0**
+* Latest: **1.0.0**
 
 Release Notes, Issues & Roadmap: `RELEASE_NOTES.md`
 
