@@ -2,7 +2,7 @@
 
 Node.js client library for Crocodoc API v2
 
-This software is release under the MIT license. See `LICENSE.md` for more details.
+This software is released under the MIT license. See `LICENSE.md` for more details.
 
 ## Release Status
 
@@ -12,7 +12,19 @@ Release Notes, Issues & Roadmap: `RELEASE_NOTES.md`
 
 ## Download and Installation
 
+From the command-line:
+
     $ npm install crocodoc-node
+
+package.json:
+
+    ...
+    dependencies: {
+      ...
+      "crocodoc-node": "*$version*",
+      ...
+    }
+    ...
 
 ### For contributors
 
@@ -158,8 +170,15 @@ All contributions and constructive suggestions are welcome.
 
 ### Set-up
 
-In order to run the tests, you will need to configure the test framework with your Crocodoc API token,
-in `test/framework/crocodoc-details.js`.
+Once you've cloned your fork to a local repo, to install all the dependencies, run:
+
+    $ make install
+
+You can then run `make lint` and `make test`, to de-lint and run the tests, respectively.
+
+In order to run the tests, you will need to configure the test framework with your Crocodoc API token:
+
+edit `test/framework/crocodoc-details.js`, and change `DUMMY-TOKEN` to your API token.
 
 If you don't do this, many of the tests will fail!
 

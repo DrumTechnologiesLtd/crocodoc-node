@@ -9,10 +9,11 @@
 
 ### New Features & Fixes in this release
 
-* Headline items
-  * [#1](https://github.com/NetDevLtd/crocodoc-node/issues/1): Core API Functionality
+* Headline items:
+  * #1: [Core API Functionality](https://github.com/NetDevLtd/crocodoc-node/issues/1)
 
-* [Full List](https://github.com/NetDevLtd/crocodoc-node/issues?milestone=1&state=closed) in this release
+
+* [List of all issues closed](https://github.com/NetDevLtd/crocodoc-node/issues?milestone=1&state=closed) in this release
 * [Known Issues](https://github.com/NetDevLtd/crocodoc-node/issues?milestone=1&state=open) with this release
 
 
