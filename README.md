@@ -4,6 +4,12 @@ Node.js client library for Crocodoc API v2
 
 This software is release under the MIT license. See `LICENSE.md` for more details.
 
+## Release Status
+
+* Latest: **0.1.0**
+
+Release Notes, Issues & Roadmap: `RELEASE_NOTES.md`
+
 ## Download and Installation
 
     $ npm install crocodoc-node
