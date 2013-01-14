@@ -1,0 +1,314 @@
+  Crocodoc API: REST: document
+    ✓ should preload a file without timing out (3695ms)
+    .status()
+      with a single uuid for a preloaded file
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should be an array
+          ✓ should have exactly one member element
+          the element
+            ✓ should have a non-empty string uuid field
+            ✓ should have an undefined error field
+            ✓ should have a non-empty string status field
+            ✓ should have a boolean viewable field
+      with a single non-existant uuid in a string
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should be an array
+          ✓ should have exactly one member element
+          the element
+            ✓ should have a non-empty uuid string field
+            ✓ should have a truthy error field
+      with multiple comma separated uuids in a string
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should be an array
+          ✓ should have the correct number of elements
+    .uploadUrl()
+      with a malformed url
+        ✓ should respond without timing out (411ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have a non-empty uuid string field
+          the final retrieved status
+            ✓ should poll for a final response without timing out (21619ms)
+            ✓ should get a falsey error
+            ✓ should get a truthy response
+            ✓ should have truthy response headers
+            ✓ should get a truthy body
+            ✓ should get a 200 OK response
+            ✓ should have a content-type response header of application/json
+            ✓ should have a body.status field of "ERROR"
+            ✓ should have a body.viewable field of false
+            ✓ should have a truthy body.error field
+      with a good url
+        ✓ should respond without timing out (374ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have a non-empty uuid string field
+          ✓ should have an undefined error field
+          the final retrieved status
+            ✓ should poll for a final response without timing out (2752ms)
+            ✓ should get a falsey error
+            ✓ should get a truthy response
+            ✓ should have truthy response headers
+            ✓ should get a truthy body
+            ✓ should get a 200 OK response
+            ✓ should have a content-type response header of application/json
+            ✓ should have a body.status field of "DONE"
+            ✓ should have a body.viewable field of true
+            ✓ should have an undefined body.error field
+    .uploadFile()
+      with an unsupported file type
+        ✓ should respond without timing out (374ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 400 response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have an undefined uuid field
+          ✓ should have a truthy error field
+      with a supported file type
+        ✓ should respond without timing out (748ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have a non-empty uuid string field
+          ✓ should have an undefined error field
+          the final retrieved status
+            ✓ should poll for a final response without timing out (2738ms)
+            ✓ should get a falsey error
+            ✓ should get a truthy response
+            ✓ should have truthy response headers
+            ✓ should get a truthy body
+            ✓ should get a 200 OK response
+            ✓ should have a content-type response header of application/json
+            ✓ should have a body.status field of "DONE"
+            ✓ should have a body.viewable field of true
+            ✓ should have an undefined body.error field
+    .remove()
+      with a non-existant uuid
+        ✓ should respond without timing out (364ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 400 response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have an undefined uuid field
+          ✓ should have a truthy error field
+      with a uuid of a pre-loaded document
+        ✓ should respond without timing out (374ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should be true
+
+  Crocodoc API: REST: download
+    ✓ should preload a file without timing out (4820ms)
+    .document()
+      with a uuid for a preloaded file
+        when downloading a pdf
+          ✓ should respond without timing out (442ms)
+          ✓ should get a falsey error
+          ✓ should get a truthy response
+          ✓ should have truthy response headers
+          ✓ should get a truthy body
+          ✓ should get a 200 OK response
+          ✓ should have a content-type response header which is not application/json
+          ✓ should have created a non-zero sized file
+          the response body generated by the library
+            ✓ should have a non-empty uuid string field
+        when downloading the original
+          ✓ should respond without timing out (698ms)
+          ✓ should get a falsey error
+          ✓ should get a truthy response
+          ✓ should have truthy response headers
+          ✓ should get a truthy body
+          ✓ should get a 200 OK response
+          ✓ should have a content-type response header which is not application/json
+          ✓ should have created a non-zero sized file
+          the response body generated by the library
+            ✓ should have a non-empty uuid string field
+      with a non-existant uuid
+        when downloading a pdf
+          ✓ should respond without timing out (355ms)
+          ✓ should get a falsey error
+          ✓ should get a truthy response
+          ✓ should have truthy response headers
+          ✓ should get a truthy body
+          ✓ should get a 400 response
+          ✓ should have a content-type response header of application/json
+          ✓ should have created a zero sized file
+          the response body returned from the API
+            ✓ should have a truthy error field
+        when downloading the original
+          ✓ should respond without timing out (355ms)
+          ✓ should get a falsey error
+          ✓ should get a truthy response
+          ✓ should have truthy response headers
+          ✓ should get a truthy body
+          ✓ should get a 400 response
+          ✓ should have a content-type response header of application/json
+          ✓ should have created a zero sized file
+          the response body returned from the API
+            ✓ should have a truthy error field
+    .thumbnail()
+      with a uuid for a preloaded file
+        ✓ should respond without timing out (726ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header which is not application/json
+        ✓ should have created a non-zero sized file
+        the response body generated by the library
+          ✓ should have a non-empty uuid string field
+      with a non-existant uuid
+        ✓ should respond without timing out (372ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 400 response
+        ✓ should have a content-type response header of application/json
+        ✓ should have created a zero sized file
+        the response body returned from the API
+          ✓ should have a truthy error field
+    .text()
+      with a uuid for a preloaded file
+        ✓ should respond without timing out (386ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        1) should get a 200 OK response
+        2) should have a content-type response header which is not application/json
+        3) should have created a non-zero sized file
+        the response body generated by the library
+          4) should have a non-empty uuid string field
+      with a non-existant uuid
+        ✓ should respond without timing out (369ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 400 response
+        ✓ should have a content-type response header of application/json
+        ✓ should have created a zero sized file
+        the response body returned from the API
+          ✓ should have a truthy error field
+
+  Crocodoc API: REST: session
+    ✓ should preload a file without timing out (3798ms)
+    .create()
+      with a uuid for a preloaded file
+        ✓ should respond without timing out (374ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 200 OK response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have a non-empty session string field
+          ✓ should have an undefined error field
+      with a non-existant uuid
+        ✓ should respond without timing out (456ms)
+        ✓ should get a falsey error
+        ✓ should get a truthy response
+        ✓ should have truthy response headers
+        ✓ should get a truthy body
+        ✓ should get a 400 response
+        ✓ should have a content-type response header of application/json
+        the response body
+          ✓ should have an undefined session field
+          ✓ should have a truthy error field
+
+
+  ✖ 4 of 205 tests failed:
+
+  1) Crocodoc API: REST: download .text() with a uuid for a preloaded file should get a 200 OK response:
+     AssertionError: Expected response status code to be 200, not: 400
+      at Context.<anonymous> (/Users/mike/SCM/github/crocodoc-node/test/framework/index.js:116:21)
+      at Test.run (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runnable.js:168:32)
+      at Runner.runTest (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:294:10)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:338:12
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:222:14)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:231:7
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:181:23)
+      at Array.<anonymous> (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:199:5)
+      at EventEmitter._tickCallback (node.js:190:38)
+
+  2) Crocodoc API: REST: download .text() with a uuid for a preloaded file should have a content-type response header which is not application/json:
+     AssertionError: Expected content type not to be application/json
+      at Context.<anonymous> (/Users/mike/SCM/github/crocodoc-node/test/framework/index.js:129:23)
+      at Test.run (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runnable.js:168:32)
+      at Runner.runTest (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:294:10)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:338:12
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:222:14)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:231:7
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:181:23)
+      at Array.<anonymous> (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:199:5)
+      at EventEmitter._tickCallback (node.js:190:38)
+
+  3) Crocodoc API: REST: download .text() with a uuid for a preloaded file should have created a non-zero sized file:
+     AssertionError: Expected filesize for "/Users/mike/SCM/github/crocodoc-node/361b239d-a4e2-46b2-8e84-e10e8d6ac7cd-text.txt" to be greater than zero, not: 0
+      at Context.<anonymous> (/Users/mike/SCM/github/crocodoc-node/test/specs/rest-download-test.js:269:19)
+      at Test.run (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runnable.js:168:32)
+      at Runner.runTest (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:294:10)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:338:12
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:222:14)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:231:7
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:181:23)
+      at Array.<anonymous> (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:199:5)
+      at EventEmitter._tickCallback (node.js:190:38)
+
+  4) Crocodoc API: REST: download .text() with a uuid for a preloaded file the response body generated by the library should have a non-empty uuid string field:
+     AssertionError: Expected body.uuid to be a non-empty string, not: (undefined). body: { error: 'text not available' }
+      at Context.<anonymous> (/Users/mike/SCM/github/crocodoc-node/test/specs/rest-download-test.js:274:21)
+      at Test.run (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runnable.js:168:32)
+      at Runner.runTest (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:294:10)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:338:12
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:222:14)
+      at /Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:231:7
+      at next (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:181:23)
+      at Array.<anonymous> (/Users/mike/SCM/github/crocodoc-node/node_modules/mocha/lib/runner.js:199:5)
+      at EventEmitter._tickCallback (node.js:190:38)
