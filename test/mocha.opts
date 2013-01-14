@@ -1,4 +1,5 @@
 --colors
 --reporter spec
 --ui bdd
+--require test/framework
 -t 2000
