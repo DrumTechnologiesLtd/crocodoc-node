@@ -1,0 +1,33 @@
+{
+  "name": "crocodoc-node",
+  "version": "1.0.0",
+  "description": "Crocodoc API, node.js client library",
+  "keywords": [ "crocodoc", "library", "client", "api" ],
+  "license": "MIT",
+  "author": "NetDev <dev@netdev.co.uk>",
+  "contributors": [
+    {
+      "name": "Mike Bardzinski",
+      "email": "mike.bardzinski@netdev.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NetDevLtd/crocodoc-node.git"
+  },
+  "private": false,
+  "engines": { "node": ">=0.6.11" },
+  "dependencies": {
+    "underscore": "1.3.3",
+    "soak": "0.3.0",
+    "request": "2.11.4",
+    "form-data": "0.0.4"
+  },
+  "devDependencies": {
+    "jshint": "0.9.1",
+    "mocha": "1.2.0"
+  },
+  "main": "./index.js",
+  "scripts": {
+   }
+}

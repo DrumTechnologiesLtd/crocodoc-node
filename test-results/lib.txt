@@ -1,0 +1,257 @@
+Crocodoc API: Client Library: base
+    constructor
+      ✓ should throw an error with no API Token
+      ✓ should throw an error if too many args are passed
+      ✓ should throw errors with invalid API Token parameters
+      ✓ should NOT throw an error with a non-empty API Token string
+    instance
+      ✓ should have a uriString function
+      ✓ should have a get function
+      ✓ should have a post function
+      .uriString()
+        ✓ should throw errors with invalid resource parameters
+        ✓ should create the correct uri for a resource (https://crocodoc.com/api/v2/some/resource)
+        ✓ should create a uri from a querystring which starts with the resource URI (https://crocodoc.com/api/v2/some/resource)
+        ✓ should create a uri from a querystring which contains the api token (token=9LrvgmfEkxAjU7tlqpDZuaPG)
+        ✓ should create a uri from a query hash which starts with the resource URI (https://crocodoc.com/api/v2/some/resource)
+        ✓ should create a uri from a query hash which contains the api token (token=9LrvgmfEkxAjU7tlqpDZuaPG)
+      .get()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a resource only, and no callback
+        ✓ should throw an error with a resource only, and a non-function callback
+        ✓ should throw errors with invalid resource parameters only, and a callback
+        ✓ should throw an error with a resource, options, and no callback
+        ✓ should throw an error with a resource, options, and a non-function callback
+        ✓ should throw errors with invalid resource parameters, options, and a callback
+        ✓ should throw an error with a resource, options, an extra parameter, and a callback
+      .post()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a resource only, and no callback
+        ✓ should throw an error with a resource only, and a non-function callback
+        ✓ should throw errors with invalid resource parameters only, and a callback
+        ✓ should throw an error with a resource, options, and no callback
+        ✓ should throw an error with a resource, options, and a non-function callback
+        ✓ should throw errors with invalid resource parameters, options, and a callback
+        ✓ should throw an error with a resource, options, an extra parameter, and a callback
+
+  Crocodoc API: Client Library: document
+    constructor
+      ✓ should throw an error with no API Token
+      ✓ should throw an error if too many params are passed
+      ✓ should throw an error with a undefined param
+      ✓ should throw an error with a null param
+      ✓ should throw an error with a number param
+      ✓ should throw an error with a boolean, true param
+      ✓ should throw an error with a boolean, false param
+      ✓ should throw an error with a object param
+      ✓ should throw an error with a function param
+      ✓ should throw an error with a empty array param
+      ✓ should throw an error with a empty string param
+      ✓ should NOT throw an error with a non-empty API Token string
+    instance
+      ✓ should have a status function
+      ✓ should have an uploadUrl function
+      ✓ should have an uploadFile function
+      ✓ should have a remove function
+      ✓ should have a poll function
+      .status()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuids param, and no callback
+        ✓ should throw an error with a good uuids param, and a non-function callback
+        ✓ should throw an error with a undefined uuids param, and a function callback
+        ✓ should throw an error with a null uuids param, and a function callback
+        ✓ should throw an error with a number uuids param, and a function callback
+        ✓ should throw an error with a boolean, true uuids param, and a function callback
+        ✓ should throw an error with a boolean, false uuids param, and a function callback
+        ✓ should throw an error with a object uuids param, and a function callback
+        ✓ should throw an error with a function uuids param, and a function callback
+        ✓ should throw an error with a empty array uuids param, and a function callback
+        ✓ should throw an error with a empty string uuids param, and a function callback
+        ✓ should throw an error with a good uuids param, an extra param, and a function callback
+      .uploadUrl()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good URL param, and no callback
+        ✓ should throw an error with a good URL param, and a non-function callback
+        ✓ should throw an error with a undefined URL param, and a function callback
+        ✓ should throw an error with a null URL param, and a function callback
+        ✓ should throw an error with a number URL param, and a function callback
+        ✓ should throw an error with a boolean, true URL param, and a function callback
+        ✓ should throw an error with a boolean, false URL param, and a function callback
+        ✓ should throw an error with a object URL param, and a function callback
+        ✓ should throw an error with a function URL param, and a function callback
+        ✓ should throw an error with a empty array URL param, and a function callback
+        ✓ should throw an error with a empty string URL param, and a function callback
+        ✓ should throw an error with a good URL param, an extra param, and a function callback
+      .uploadFile()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good filepath param, and no callback
+        ✓ should throw an error with a good filepath param, and a non-function callback
+        ✓ should throw an error with a undefined filepath param, and a function callback
+        ✓ should throw an error with a null filepath param, and a function callback
+        ✓ should throw an error with a number filepath param, and a function callback
+        ✓ should throw an error with a boolean, true filepath param, and a function callback
+        ✓ should throw an error with a boolean, false filepath param, and a function callback
+        ✓ should throw an error with a object filepath param, and a function callback
+        ✓ should throw an error with a function filepath param, and a function callback
+        ✓ should throw an error with a empty array filepath param, and a function callback
+        ✓ should throw an error with a empty string filepath param, and a function callback
+        ✓ should throw an error with a good filepath param, an extra param, and a function callback
+        ✓ should throw an error with a non-existant file
+        ✓ should throw an error with a directory
+        ✓ should throw an error with an unreadable file
+      .remove()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, and no callback
+        ✓ should throw an error with a good uuid param, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, and a function callback
+        ✓ should throw an error with a null uuid param, and a function callback
+        ✓ should throw an error with a number uuid param, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, and a function callback
+        ✓ should throw an error with a object uuid param, and a function callback
+        ✓ should throw an error with a function uuid param, and a function callback
+        ✓ should throw an error with a empty array uuid param, and a function callback
+        ✓ should throw an error with a empty string uuid param, and a function callback
+        ✓ should throw an error with a good uuid param, an extra param, and a function callback
+      .poll()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, and no callback
+        ✓ should throw an error with a good uuid param, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, and a function callback
+        ✓ should throw an error with a null uuid param, and a function callback
+        ✓ should throw an error with a number uuid param, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, and a function callback
+        ✓ should throw an error with a object uuid param, and a function callback
+        ✓ should throw an error with a function uuid param, and a function callback
+        ✓ should throw an error with a empty array uuid param, and a function callback
+        ✓ should throw an error with a empty string uuid param, and a function callback
+        ✓ should throw an error with a good uuid param, an extra param, and a function callback
+
+  Crocodoc API: Client Library: download
+    constructor
+      ✓ should throw an error with no API Token
+      ✓ should throw an error if too many args are passed
+      ✓ should throw an error with a undefined param
+      ✓ should throw an error with a null param
+      ✓ should throw an error with a number param
+      ✓ should throw an error with a boolean, true param
+      ✓ should throw an error with a boolean, false param
+      ✓ should throw an error with a object param
+      ✓ should throw an error with a function param
+      ✓ should throw an error with a empty array param
+      ✓ should throw an error with a empty string param
+      ✓ should NOT throw an error with a non-empty API Token string
+    instance
+      ✓ should have a document function
+      ✓ should have a thumbnail function
+      ✓ should have a text function
+      .document()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, a writeable stream, and no callback
+        ✓ should throw an error with a good uuid param, a writeable stream, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a null uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a number uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a object uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a function uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty array uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty string uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a good uuid param, options, a writeable stream, and no callback
+        ✓ should throw an error with a good uuid param, options, a writeable stream, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a null uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a number uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a object uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a function uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a empty array uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a empty string uuid param, options, a writeable stream, and a function callback
+        ✓ should throw an error with a good uuid, options, a writeable stream, an extra param, and a callback
+      .thumbnail()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, a writeable stream, and no callback
+        ✓ should throw an error with a good uuid param, a writeable stream, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a null uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a number uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a object uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a function uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty array uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty string uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a good uuid param, size, a writeable stream, and no callback
+        ✓ should throw an error with a good uuid param, size, a writeable stream, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a null uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a number uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a object uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a function uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a empty array uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a empty string uuid param, size, a writeable stream, and a function callback
+        ✓ should throw an error with a good uuid, size, a writeable stream, an extra param, and a callback
+      .text()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, a writeable stream, and no callback
+        ✓ should throw an error with a good uuid param, a writeable stream, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a null uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a number uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a object uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a function uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty array uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a empty string uuid param, a writeable stream, and a function callback
+        ✓ should throw an error with a good uuid, a writeable stream, an extra param, and a callback
+
+  Crocodoc API: Client Library: session
+    constructor
+      ✓ should throw an error with no API Token
+      ✓ should throw an error if too many params are passed
+      ✓ should throw an error with a undefined param
+      ✓ should throw an error with a null param
+      ✓ should throw an error with a number param
+      ✓ should throw an error with a boolean, true param
+      ✓ should throw an error with a boolean, false param
+      ✓ should throw an error with a object param
+      ✓ should throw an error with a function param
+      ✓ should throw an error with a empty array param
+      ✓ should throw an error with a empty string param
+      ✓ should NOT throw an error with a non-empty API Token string
+    instance
+      ✓ should have a create function
+      .create()
+        ✓ should throw an error with no parameters
+        ✓ should throw an error with a good uuid param, no options, and no callback
+        ✓ should throw an error with a good uuid param, no options, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, no options, and a function callback
+        ✓ should throw an error with a null uuid param, no options, and a function callback
+        ✓ should throw an error with a number uuid param, no options, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, no options, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, no options, and a function callback
+        ✓ should throw an error with a object uuid param, no options, and a function callback
+        ✓ should throw an error with a function uuid param, no options, and a function callback
+        ✓ should throw an error with a empty array uuid param, no options, and a function callback
+        ✓ should throw an error with a empty string uuid param, no options, and a function callback
+        ✓ should throw an error with a good uuid param, options, and no callback
+        ✓ should throw an error with a good uuid param, options, and a non-function callback
+        ✓ should throw an error with a undefined uuid param, options, and a function callback
+        ✓ should throw an error with a null uuid param, options, and a function callback
+        ✓ should throw an error with a number uuid param, options, and a function callback
+        ✓ should throw an error with a boolean, true uuid param, options, and a function callback
+        ✓ should throw an error with a boolean, false uuid param, options, and a function callback
+        ✓ should throw an error with a object uuid param, options, and a function callback
+        ✓ should throw an error with a function uuid param, options, and a function callback
+        ✓ should throw an error with a empty array uuid param, options, and a function callback
+        ✓ should throw an error with a empty string uuid param, options, and a function callback
+        ✓ should throw an error with a good uuid, options, an extra param, and a callback
+
+
+  ✔ 227 tests complete (139ms)
