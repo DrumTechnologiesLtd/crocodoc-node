@@ -46,117 +46,145 @@ These files were generated from the mocha test suite with the spec reporter.
 
 #### Uploading a local file to Crocodoc
 
-    documentApi.uploadFile(pathToSupportedFile, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string: ', body.uuid);
-    });
+```javascript
+documentApi.uploadFile(pathToSupportedFile, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string: ', body.uuid);
+});
+```
 
 #### Uploading a URL to Crocodoc
 
-    documentApi.uploadUrl('http://web.crocodoc.com/files/test-simple.pdf', function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string: ', body.uuid);
-    });
+```javascript
+documentApi.uploadUrl('http://web.crocodoc.com/files/test-simple.pdf', function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string: ', body.uuid);
+});
+```
 
 #### Getting an uploaded document's status
 
 For a single document:
 
-    documentApi.status(docUuid, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body should be an array containing a single status', body);
-    });
+```javascript
+documentApi.status(docUuid, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body should be an array containing a single status', body);
+});
+```
 
 OR for multiple documents:
 
-    documentApi.status([docUuid1, docUuid2, ...] , function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body should be an array containing a single status', body);
-    });
+```javascript
+documentApi.status([docUuid1, docUuid2, ...] , function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body should be an array containing a single status', body);
+});
+```
 
 #### Deleting an uploaded document
 
-    documentApi.remove(docUuid, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body should be true', body);
-    });
+```javascript
+documentApi.remove(docUuid, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body should be true', body);
+});
+```
 
 #### Poll for completion
 
 This is additional to the Crocodoc API, and is provided as a helper.
 
-    documentApi.poll(docUuid, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body should be a single status', body);
-    });
+```javascript
+documentApi.poll(docUuid, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body should be a single status', body);
+});
+```
 
 The callback will not be invoked until the document has finished converting (or the conversion has failed).
 The body contains the retrieved document status indicating conversion completion or failure.
 
 ### SessionAPI
 
-    var sessionApi = new require('crocodoc-node').CrocodocAPI('API_TOKEN').sessionAPI;
+```javascript
+var sessionApi = new require('crocodoc-node').CrocodocAPI('API_TOKEN').sessionAPI;
+```
 
 #### Creating a new session
 
 With supplied [session options](https://crocodoc.com/docs/api/#session-create):
 
-    sessionApi.create(docUuid, {editable:false, downloadable: true}, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.session should be a non-empty string', body.session);
-    });
+```javascript
+sessionApi.create(docUuid, {editable:false, downloadable: true}, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.session should be a non-empty string', body.session);
+});
+```
 
 With default session options:
 
-    sessionApi.create(docUuid, function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.session should be a non-empty string', body.session);
-    });
+```javascript
+sessionApi.create(docUuid, function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.session should be a non-empty string', body.session);
+});
+```
 
 ### DownloadAPI
 
-    var fs = require('fs');
-    var downloadApi = new require('crocodoc-node').CrocodocAPI('API_TOKEN').downloadAPI;
+```javascript
+var fs = require('fs');
+var downloadApi = new require('crocodoc-node').CrocodocAPI('API_TOKEN').downloadAPI;
+```
 
 #### Downloading the original document
 
-    downloadApi.document(docUuid, fs.createWriteStream('filePath.orig'), function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string', body.uuid);
-    });
+```javascript
+downloadApi.document(docUuid, fs.createWriteStream('filePath.orig'), function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string', body.uuid);
+});
+```
 
 #### Downloading the document as a PDF
 
-    downloadApi.document(docUuid, {pdf: true}, fs.createWriteStream('filePath.pdf'), function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string', body.uuid);
-    });
+```javascript
+downloadApi.document(docUuid, {pdf: true}, fs.createWriteStream('filePath.pdf'), function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string', body.uuid);
+});
+```
 
 #### Downloading the document's thumbnail
 
-    downloadApi.thumbnail(docUuid, '150x150', fs.createWriteStream('filePath.png'), function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string', body.uuid);
-    });
+```javascript
+downloadApi.thumbnail(docUuid, '150x150', fs.createWriteStream('filePath.png'), function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string', body.uuid);
+});
+```
 
 #### Downloading the extracted text for a document
 
-    downloadApi.text(docUuid,  fs.createWriteStream('filePath.txt'), function(error, response, body) {
-      console.log('error should be falsey: ', error);
-      console.log('response.statusCode should be 200: ', response.statusCode);
-      console.log('body.uuid should be a non-empty string', body.uuid);
-    });
+```javascript
+downloadApi.text(docUuid,  fs.createWriteStream('filePath.txt'), function(error, response, body) {
+  console.log('error should be falsey: ', error);
+  console.log('response.statusCode should be 200: ', response.statusCode);
+  console.log('body.uuid should be a non-empty string', body.uuid);
+});
+```
 
 ## Bug reports
 
